@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,51 +22,29 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
+                style="@style/DetailFragment.TopImage"
                 android:id="@+id/photo"
                 android:layout_width="match_parent"
-                android:minHeight="180dp"
-                android:maxHeight="240dp"
-                android:scaleType="centerCrop"
-                android:layout_height="wrap_content"/>
+                android:layout_height="match_parent"/>
 
             <LinearLayout
-                android:gravity="bottom"
+                style="@style/DetailFragment.MetaBar"
                 android:id="@+id/meta_bar"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#333"
-                android:layout_gravity="bottom"
-                android:orientation="vertical">
-
-
+                android:layout_height="wrap_content">
 
                 <TextView
-                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
-                    android:paddingRight="@dimen/detail_inner_horiz_margin"
-                    android:paddingTop="@dimen/detail_metabar_vert_padding"
                     android:id="@+id/article_title"
-                    android:maxLines="2"
-                    android:ellipsize="end"
-                    style="?android:attr/textAppearanceLarge"
-                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/detail_metabar_title_bottom_padding"
-                    android:fontFamily="sans-serif-condensed"
-                    android:textColor="#fff"
-                    android:textStyle="bold"
-                    android:textSize="@dimen/detail_title_text_size"
-                    android:lineSpacingMultiplier="0.9" />
+                    android:layout_width="match_parent"
+                    style="@style/DetailFragment.Title" />
 
                 <TextView
-                    android:paddingBottom="@dimen/detail_metabar_vert_padding"
-                    android:layout_marginBottom="@dimen/detail_metabar_vert_padding"
-                    android:paddingLeft="@dimen/detail_inner_horiz_margin"
-                    android:paddingRight="@dimen/detail_inner_horiz_margin"
                     android:id="@+id/article_byline"
-                    style="?android:attr/textAppearanceSmall"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="#8fff" />
+                    style="@style/DetailFragment.ByLine" />
+
             </LinearLayout>
 
             <android.support.v7.widget.Toolbar
@@ -79,46 +58,23 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.widget.NestedScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:showIn="@layout/activity_scrolling_article_detail">
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
                 <TextView
                     android:id="@+id/article_body"
-                    style="?android:attr/textAppearanceMedium"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/detail_inner_horiz_margin"
-                    android:layout_marginRight="@dimen/detail_inner_horiz_margin"
-                    android:paddingBottom="@dimen/detail_body_bottom_margin"
-                    android:textColor="@color/ltgray"
-                    android:textColorLink="@color/theme_accent"
-                    android:textSize="@dimen/detail_body_text_size"
-                    android:lineSpacingMultiplier="@fraction/detail_body_line_spacing_multiplier" />
-
-        </FrameLayout>
+                    style="@style/DetailFragment.Body" />
 
     </android.support.v4.widget.NestedScrollView>
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/share_fab"
-        android:stateListAnimator="@anim/fab_state_list_anim"
-        android:background="@drawable/add_fab_background"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="@dimen/fab_margin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/ic_share"
-        android:elevation="@dimen/fab_elevation"
-        android:contentDescription="@string/action_share" />
+        style="@style/DetailFragment.Fab" />
 
 </android.support.design.widget.CoordinatorLayout>

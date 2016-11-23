@@ -27,4 +27,9 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!--DetailFragment-->
+    <color name="detailTitleFragment">#fff</color>
+    <color name="detailMetaBar">#333</color>
+    <color name="detailByLine">#8fff</color>
 </resources>

@@ -5,9 +5,9 @@
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
-  
+
           http://www.apache.org/licenses/LICENSE-2.0
-  
+
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -24,10 +24,6 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-<!--    <style name="Theme.Bacon.Detail">
-        <item name="android:statusBarColor">@android:color/transparent</item>
-    </style>-->
-
 
     <style name="Theme.Bacon.NoActionBar">
         <item name="windowActionBar">false</item>
@@ -37,5 +33,80 @@
     <style name="Theme.Bacon.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.Bacon.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="ArticleList"/>
+
+
+
+    <style name="ArticleList.RecyclerView">
+        <item name="android:clipToPadding">false</item>
+        <item name="android:scrollbarStyle">outsideOverlay</item>
+        <item name="android:paddingLeft">@dimen/list_side_margin</item>
+        <item name="android:paddingStart">@dimen/list_side_margin</item>
+        <item name="android:paddingRight">@dimen/list_side_margin</item>
+        <item name="android:paddingEnd">@dimen/list_side_margin</item>
+        <item name="android:paddingTop">@dimen/list_top_margin</item>
+        <item name="android:paddingBottom">@dimen/list_top_margin</item>
+    </style>
+
+    <!--Detail Fragment Styles-->
+    <style name="DetailFragment"/>
+
+    <style name="DetailFragment.TopImage">
+        <!--TODO-->
+        <item name="android:minHeight">180dp</item>
+        <item name="android:maxHeight">240dp</item>
+        <item name="android:scaleType">centerCrop</item>
+    </style>
+
+    <style name="DetailFragment.MetaBar">
+        <item name="android:gravity">bottom</item>
+        <item name="android:background">@color/detailMetaBar</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="DetailFragment.Title">
+        <item name="android:paddingLeft">@dimen/detail_inner_horiz_margin</item>
+        <item name="android:paddingRight">@dimen/detail_inner_horiz_margin</item>
+        <item name="android:paddingTop">@dimen/detail_metabar_vert_padding</item>
+        <item name="android:maxLines">2</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:paddingBottom">@dimen/detail_metabar_title_bottom_padding</item>
+        <item name="android:textColor">@color/detailTitleFragment</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/detail_title_text_size</item>
+        <item name="android:lineSpacingMultiplier">0.9</item>
+    </style>
+
+    <style name="DetailFragment.ByLine">
+        <item name="android:textSize">12sp</item>
+        <item name="android:paddingBottom">@dimen/detail_metabar_vert_padding</item>
+        <item name="android:layout_marginBottom">@dimen/detail_metabar_vert_padding</item>
+        <item name="android:paddingLeft">@dimen/detail_inner_horiz_margin</item>
+        <item name="android:paddingRight">@dimen/detail_inner_horiz_margin</item>
+        <item name="android:textColor">@color/detailByLine</item>
+    </style>
+
+    <style name="DetailFragment.Body">
+        <item name="android:paddingTop">@dimen/detail_body_top_margin</item>
+        <item name="android:layout_marginLeft">@dimen/detail_inner_horiz_margin</item>
+        <item name="android:layout_marginRight">@dimen/detail_inner_horiz_margin</item>
+        <item name="android:paddingBottom">@dimen/detail_body_bottom_margin</item>
+        <item name="android:textColorLink">@color/theme_accent</item>
+        <item name="android:textSize">@dimen/detail_body_text_size</item>
+        <item name="android:lineSpacingMultiplier">@fraction/detail_body_line_spacing_multiplier</item>
+    </style>
+
+    <style name="DetailFragment.Fab">
+        <item name="android:stateListAnimator">@anim/fab_state_list_anim</item>
+        <item name="android:background">@drawable/add_fab_background</item>
+        <item name="android:layout_gravity">bottom|end</item>
+        <item name="android:layout_marginRight">@dimen/fab_margin</item>
+        <item name="android:layout_marginEnd">@dimen/fab_margin</item>
+        <item name="android:layout_marginBottom">@dimen/fab_margin</item>
+        <item name="android:elevation">@dimen/fab_elevation</item>
+        <item name="android:contentDescription">@string/action_share</item>
+    </style>
 
 </resources>

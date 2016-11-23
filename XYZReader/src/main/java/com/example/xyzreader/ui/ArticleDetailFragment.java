@@ -16,6 +16,7 @@ import android.support.v4.app.ShareCompat;
 import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
+import android.text.format.DateUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -115,18 +116,27 @@ public class ArticleDetailFragment extends Fragment implements
 
         collapsingToolbarLayout.setExpandedTitleColor(Color.TRANSPARENT);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(getActivity()!=null)
+                getActivity().onBackPressed();
+            }
+        });
         return mRootView;
     }
 
     private void populateViews() {
 
         if (mCursor != null) {
-            Log.d("Count", ""+mCursor.getCount());
-
-            //TODO: mCursor.getString(ArticleLoader.Query.TITLE)
             String body = mCursor.getString(ArticleLoader.Query.BODY);
-            final String title = mCursor.getString(ArticleLoader.Query.TITLE);
-            String byline = mCursor.getString(ArticleLoader.Query.AUTHOR);
+            String title = mCursor.getString(ArticleLoader.Query.TITLE);
+            String byline = DateUtils.getRelativeTimeSpanString(
+                    mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
+                    System.currentTimeMillis(), DateUtils.HOUR_IN_MILLIS,
+                    DateUtils.FORMAT_ABBREV_ALL).toString()
+                    + " by "
+                    + mCursor.getString(ArticleLoader.Query.AUTHOR);
             String photoUrl = mCursor.getString(ArticleLoader.Query.PHOTO_URL);
 
             titleView.setText(title);
@@ -134,11 +144,11 @@ public class ArticleDetailFragment extends Fragment implements
             bylineView.setText(byline);
             collapsingToolbarLayout.setTitle(title);
             collapsingToolbarLayout.setExpandedTitleColor(Color.TRANSPARENT);
+
             Glide.with(this).load(photoUrl).asBitmap().into(new SimpleTarget<Bitmap>() {
                 @Override
                 public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
                     mPhotoView.setImageBitmap(resource);
-                    //TODO: Palette
                     Palette.from(resource).generate(new Palette.PaletteAsyncListener() {
                         @Override
                         public void onGenerated(Palette palette) {
@@ -160,6 +170,7 @@ public class ArticleDetailFragment extends Fragment implements
                                     collapsingToolbarLayout.setStatusBarScrimColor(swatch.getRgb());
                                     appBarLayout.setBackgroundColor(swatch.getRgb());
                                     collapsingToolbarLayout.setBackgroundColor(swatch.getRgb());
+                                    bodyView.setLinkTextColor(swatch.getRgb());
                                 }
                             }
                         }

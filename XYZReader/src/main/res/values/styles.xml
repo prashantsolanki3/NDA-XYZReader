@@ -30,7 +30,9 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Bacon.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Bacon.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
+        <!--<item name="android:elevation">4dp</item>-->
+    </style>
 
     <style name="Theme.Bacon.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
@@ -99,7 +101,7 @@
     </style>
 
     <style name="DetailFragment.Fab">
-        <item name="android:stateListAnimator">@anim/fab_state_list_anim</item>
+        <item name="android:stateListAnimator">@drawable/fab_state_list_anim</item>
         <item name="android:background">@drawable/add_fab_background</item>
         <item name="android:layout_gravity">bottom|end</item>
         <item name="android:layout_marginRight">@dimen/fab_margin</item>

@@ -114,8 +114,8 @@ public class ArticleDetailFragment extends Fragment implements
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
         ButterKnife.bind(this,mRootView);
 
-        collapsingToolbarLayout.setExpandedTitleColor(Color.TRANSPARENT);
         toolbar.setNavigationIcon(R.drawable.ic_arrow_back);
+
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -142,9 +142,8 @@ public class ArticleDetailFragment extends Fragment implements
             titleView.setText(title);
             bodyView.setText(Html.fromHtml(body));
             bylineView.setText(byline);
-            collapsingToolbarLayout.setTitle(title);
+            toolbar.setTitle(title);
             collapsingToolbarLayout.setExpandedTitleColor(Color.TRANSPARENT);
-
             Glide.with(this).load(photoUrl).asBitmap().into(new SimpleTarget<Bitmap>() {
                 @Override
                 public void onResourceReady(Bitmap resource, GlideAnimation<? super Bitmap> glideAnimation) {
@@ -168,7 +167,7 @@ public class ArticleDetailFragment extends Fragment implements
                                     collapsingToolbarLayout.setCollapsedTitleTextColor(swatch.getTitleTextColor());
                                     collapsingToolbarLayout.setContentScrimColor(swatch.getRgb());
                                     collapsingToolbarLayout.setStatusBarScrimColor(swatch.getRgb());
-                                    appBarLayout.setBackgroundColor(swatch.getRgb());
+                                    //appBarLayout.setBackgroundColor(swatch.getRgb());
                                     collapsingToolbarLayout.setBackgroundColor(swatch.getRgb());
                                     bodyView.setLinkTextColor(swatch.getRgb());
                                 }

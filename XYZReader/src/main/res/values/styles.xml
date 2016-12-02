@@ -31,7 +31,7 @@
     </style>
 
     <style name="Theme.Bacon.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" >
-        <!--<item name="android:elevation">4dp</item>-->
+        <item name="android:elevation">4dp</item>
     </style>
 
     <style name="Theme.Bacon.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />

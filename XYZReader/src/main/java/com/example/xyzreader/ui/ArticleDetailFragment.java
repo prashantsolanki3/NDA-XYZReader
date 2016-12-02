@@ -167,7 +167,7 @@ public class ArticleDetailFragment extends Fragment implements
                                     collapsingToolbarLayout.setCollapsedTitleTextColor(swatch.getTitleTextColor());
                                     collapsingToolbarLayout.setContentScrimColor(swatch.getRgb());
                                     collapsingToolbarLayout.setStatusBarScrimColor(swatch.getRgb());
-                                    //appBarLayout.setBackgroundColor(swatch.getRgb());
+                                    appBarLayout.setBackgroundColor(swatch.getRgb());
                                     collapsingToolbarLayout.setBackgroundColor(swatch.getRgb());
                                     bodyView.setLinkTextColor(swatch.getRgb());
                                 }
